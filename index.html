@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get a Professional Website for Your Business at No Cost — The Smart Scale Digital</title>
 <meta name="description" content="Your business deserves a professional place online. For a limited number of businesses, get that website without paying a design or development fee — in exchange for one honest testimonial after approval.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
@@ -79,6 +81,34 @@
   .nav-cta{background:var(--gold);color:var(--navy);font-weight:800;font-size:13px;padding:10px 18px;border-radius:100px;letter-spacing:0.01em;transition:transform .2s ease, box-shadow .2s ease;white-space:nowrap;border:none;cursor:pointer;box-shadow:0 8px 20px -10px rgba(248,164,13,0.6);}
   .nav-cta:hover{transform:translateY(-1px) scale(1.03);}
   @media (max-width:880px){.nav-links{display:none;}}
+  #home,#included,#how,#who,#faq,#contact{scroll-margin-top:84px;}
+
+  /* mobile menu */
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;width:38px;height:38px;align-items:center;justify-content:center;}
+  .menu-toggle span{display:block;width:20px;height:2px;background:var(--white);border-radius:2px;position:relative;transition:background .2s ease;}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s var(--ease), top .3s var(--ease);}
+  .menu-toggle span::before{top:-6px;}
+  .menu-toggle span::after{top:6px;}
+  .menu-toggle.open span{background:transparent;}
+  .menu-toggle.open span::before{top:0;transform:rotate(45deg);}
+  .menu-toggle.open span::after{top:0;transform:rotate(-45deg);}
+  .mobile-menu{position:fixed;inset:0;z-index:49;background:rgba(8,22,39,0.98);backdrop-filter:blur(10px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s5);opacity:0;pointer-events:none;transition:opacity .3s var(--ease);}
+  .mobile-menu.open{opacity:1;pointer-events:auto;}
+  .mobile-menu a{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:26px;color:var(--white);letter-spacing:0.02em;transition:color .2s ease;}
+  .mobile-menu a:hover,.mobile-menu a.active{color:var(--gold);}
+  .mobile-menu .nav-cta{margin-top:var(--s3);}
+  @media (min-width:881px){.menu-toggle{display:none !important;}.mobile-menu{display:none !important;}}
+  @media (max-width:880px){.menu-toggle{display:flex;}}
+
+  /* scroll-spy active nav link */
+  .nav-links a.active{color:var(--white);}
+  .nav-links a.active::after{right:0;}
+
+  /* back to top */
+  .to-top{position:fixed;right:22px;bottom:22px;z-index:45;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--navy);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -10px rgba(0,0,0,0.5);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .3s ease, transform .3s ease;}
+  .to-top.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .to-top:hover{transform:translateY(-3px);}
+  .to-top svg{width:18px;height:18px;}
 
   /* ---------- HERO ---------- */
   .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:var(--white);overflow:hidden;background:var(--navy);}
@@ -137,7 +167,20 @@
   .how-banner{margin-top:var(--s6);aspect-ratio:21/8;box-shadow:0 30px 70px -30px rgba(0,0,0,0.6);}
   .how-banner-cap{position:absolute;left:var(--s4);bottom:var(--s3);z-index:1;font-size:12.5px;font-weight:600;color:var(--on-navy-70);background:rgba(8,22,39,0.55);backdrop-filter:blur(6px);padding:6px 12px;border-radius:100px;}
   .timeline{margin-top:var(--s6);display:grid;grid-template-columns:repeat(2,1fr);gap:0;}
-  .t-step{display:flex;gap:var(--s3);padding:var(--s4) var(--s4) var(--s4) 0;border-top:1px solid rgba(255,255,255,0.1);}
+  #included{position:relative;overflow:hidden;}
+  #included::before{content:"";position:absolute;top:-40px;right:-40px;width:260px;height:260px;background-image:radial-gradient(var(--navy-12) 1.6px, transparent 1.6px);background-size:16px 16px;opacity:0.6;z-index:0;pointer-events:none;}
+  #included .wrap{position:relative;z-index:1;}
+
+  .t-step{display:flex;gap:var(--s3);padding:var(--s4) var(--s4) var(--s4) 0;border-top:1px solid rgba(255,255,255,0.1);transition:background .25s ease;border-radius:8px;}
+  .t-step:hover{background:rgba(255,255,255,0.04);}
+  .who-item{transition:transform .25s var(--ease);}
+  .who-item:hover{transform:translateX(6px);}
+  .compare-col{transition:transform .3s var(--ease), box-shadow .3s var(--ease);}
+  .compare-col:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(16,39,67,0.3);}
+  .stat{transition:transform .25s var(--ease);}
+  .stat:hover{transform:translateY(-3px);}
+  .faq-q{transition:color .2s ease;}
+  .faq-item:hover .faq-q{color:var(--gold-deep);}
   .t-step:nth-child(odd){border-right:1px solid rgba(255,255,255,0.1);padding-right:var(--s4);}
   .t-step:nth-child(even){padding-left:var(--s4);}
   .t-step:nth-child(-n+2){border-top:none;}
@@ -156,7 +199,10 @@
   .reassure p{margin-top:var(--s2);font-size:14px;line-height:1.6;color:var(--navy);font-weight:500;}
 
   /* THE EXCHANGE */
-  .exchange{background:var(--navy-06);}
+  .exchange{background:var(--navy-06);position:relative;overflow:hidden;}
+  .exchange .section-bg{position:absolute;inset:0;z-index:0;opacity:0.09;}
+  .exchange .section-bg img{width:100%;height:100%;object-fit:cover;}
+  .exchange .wrap{position:relative;z-index:1;}
   .eq-row{display:flex;align-items:center;justify-content:center;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s6);text-align:center;}
   .eq-box{background:var(--navy);color:var(--white);padding:20px 26px;border-radius:14px;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:17px;max-width:230px;transition:transform .3s var(--ease);}
   .eq-box:hover{transform:translateY(-3px);}
@@ -176,7 +222,10 @@
   .who-item svg{width:19px;height:19px;color:var(--gold-deep);flex-shrink:0;margin-top:2px;}
 
   /* WHAT ISN'T INCLUDED */
-  .compare{background:var(--navy-06);}
+  .compare{background:var(--navy-06);position:relative;overflow:hidden;}
+  .compare .section-bg{position:absolute;inset:0;z-index:0;opacity:0.08;}
+  .compare .section-bg img{width:100%;height:100%;object-fit:cover;}
+  .compare .wrap{position:relative;z-index:1;}
   .compare-grid{display:flex;gap:var(--s4);margin-top:var(--s6);flex-wrap:wrap;}
   .compare-col{flex:1 1 280px;background:var(--white);border-radius:16px;padding:var(--s5);border:1px solid var(--navy-12);}
   .compare-col h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:15px;color:var(--navy);}
@@ -259,15 +308,28 @@
       </svg>
       <span class="wordmark">The Smart Scale<br><span class="gold-word">Digital</span></span>
     </a>
-    <nav class="nav-links">
-      <a href="#included">What's Included</a>
-      <a href="#how">How It Works</a>
-      <a href="#who">Who It's For</a>
-      <a href="#faq">FAQ</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#included" data-nav="included">What's Included</a>
+      <a href="#how" data-nav="how">How It Works</a>
+      <a href="#who" data-nav="who">Who It's For</a>
+      <a href="#faq" data-nav="faq">FAQ</a>
     </nav>
     <a class="nav-cta" href="https://wa.me/2347017906467?text=Hi!%20I%27d%20like%20to%20get%20started%20with%20my%20free%20business%20website." target="_blank" rel="noopener">Get Started</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#included">What's Included</a>
+  <a href="#how">How It Works</a>
+  <a href="#who">Who It's For</a>
+  <a href="#faq">FAQ</a>
+  <a class="nav-cta" href="https://wa.me/2347017906467?text=Hi!%20I%27d%20like%20to%20get%20started%20with%20my%20free%20business%20website." target="_blank" rel="noopener">Get Started</a>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <main id="top">
 
@@ -278,7 +340,9 @@
     </div>
     <div class="hero-content wrap">
       <div class="hero-head reveal in">
-        <div class="script-line">We Give You Online Relevance</div>
+        <div class="script-line" style="display:flex;align-items:center;gap:10px;">We Give You Online Relevance
+          <svg width="46" height="20" viewBox="0 0 46 20" fill="none" style="flex-shrink:0;"><path d="M1 15C7 15 7 4 13 4C19 4 19 15 25 15C31 15 31 4 37 4" stroke="#F8A40D" stroke-width="2" stroke-linecap="round"/><path d="M32 2L38 4L36 10" stroke="#F8A40D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         <h1>A Professional Website<br>for Your Business, <span class="g">At No Cost</span></h1>
         <p class="hero-sub">A professional place online where people can find you, understand what you offer, and reach you — for a limited number of businesses, no design or development fee.</p>
       </div>
@@ -381,6 +445,7 @@
 
   <!-- THE EXCHANGE -->
   <section class="exchange">
+    <div class="section-bg"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400" alt="" loading="lazy"></div>
     <div class="wrap">
       <div class="section-head reveal" style="margin:0 auto;text-align:center;">
         <div class="eyebrow center">The Exchange</div>
@@ -388,7 +453,10 @@
       </div>
       <div class="eq-row">
         <div class="eq-box reveal">Professional Website</div>
-        <span class="eq-sym reveal">in exchange for</span>
+        <span class="eq-sym reveal" style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <svg width="30" height="24" viewBox="0 0 30 24" fill="none"><path d="M2 8H26M26 8L20 2M26 8L20 14" stroke="#C97F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 16H4M4 16L10 10M4 16L10 22" stroke="#C97F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          in exchange for
+        </span>
         <div class="eq-box reveal">Your Honest 1–2 Min Video</div>
       </div>
       <p class="exchange-copy reveal">No fee for the design or development. Once you're happy with the finished website, you record a short, honest video about your experience — <b>no script, no forced positivity</b>, just a simple phone recording.</p>
@@ -421,6 +489,7 @@
 
   <!-- WHAT ISN'T INCLUDED -->
   <section class="compare">
+    <div class="section-bg"><img src="https://images.unsplash.com/photo-1678690832311-bb6e361989ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400" alt="" loading="lazy"></div>
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">What Isn't Included</div>
@@ -522,6 +591,7 @@
         <a href="#who">Who It's For</a>
         <a href="#faq">FAQ</a>
         <a href="terms.html">Website Partnership Terms</a>
+        <a href="privacy.html">Privacy Policy</a>
       </nav>
       <div class="foot-contact">
         <a href="https://wa.me/2347017906467?text=Hi!%20I%27d%20like%20to%20get%20started%20with%20my%20free%20business%20website." target="_blank" rel="noopener">+234 701 790 6467</a>
@@ -530,7 +600,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 The Smart Scale Digital. All rights reserved. · <a href="terms.html">Terms apply</a></span>
+      <span>© 2026 The Smart Scale Digital. All rights reserved. · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span>
       <span>Photography via <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span>
     </div>
   </div>
@@ -539,9 +609,39 @@
 <script>
   // Header shrink on scroll
   const header = document.getElementById('siteHeader');
-  const onScroll = () => { header.classList.toggle('scrolled', window.scrollY > 40); };
+  const toTop = document.getElementById('toTop');
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    toTop.classList.toggle('show', window.scrollY > 600);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = () => { menuToggle.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); mobileMenu.classList.remove('open'); };
+  menuToggle.addEventListener('click', () => {
+    const open = menuToggle.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    mobileMenu.classList.toggle('open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Scroll-spy nav highlighting
+  const navLinkEls = document.querySelectorAll('#navLinks a[data-nav]');
+  const spySections = ['included','how','who','faq'].map(id => document.getElementById(id)).filter(Boolean);
+  if ('IntersectionObserver' in window && spySections.length) {
+    const spyIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinkEls.forEach(a => a.classList.toggle('active', a.dataset.nav === e.target.id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+    spySections.forEach(s => spyIO.observe(s));
+  }
 
   // Reveal on scroll
   const els = document.querySelectorAll('.reveal:not(.in), .clip-reveal');
