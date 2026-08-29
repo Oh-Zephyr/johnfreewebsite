@@ -55,11 +55,9 @@
   @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}.kenburns{animation:none !important;}}
   :focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;}
 
-  .img-frame{position:relative;overflow:hidden;border-radius:20px;}
-  .img-frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);}
+  .img-frame{position:relative;overflow:hidden;border-radius:20px;background:var(--navy-10);}
+  .img-frame img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);display:block;}
   .img-frame:hover img{transform:scale(1.045);}
-  .clip-reveal{clip-path:inset(0 0 100% 0);transition:clip-path 1s var(--ease);}
-  .clip-reveal.in{clip-path:inset(0 0 0% 0);}
 
   @keyframes kenburns{0%{transform:scale(1.06);}100%{transform:scale(1.16);}}
   .kenburns{animation:kenburns 16s var(--ease) infinite alternate;}
@@ -83,7 +81,7 @@
   @media (max-width:880px){.nav-links{display:none;}}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:var(--white);overflow:hidden;}
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;color:var(--white);overflow:hidden;background:var(--navy);}
   .hero-bg{position:absolute;inset:0;z-index:0;}
   .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;}
   .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,22,39,0.55) 0%, rgba(8,22,39,0.55) 40%, rgba(8,22,39,0.94) 92%), linear-gradient(90deg, rgba(8,22,39,0.75) 0%, rgba(8,22,39,0.2) 55%);}
@@ -210,7 +208,7 @@
   .faq-a p{padding:0 4px 18px;font-size:14px;line-height:1.55;color:var(--navy-45);font-weight:500;max-width:600px;}
 
   /* FINAL CTA */
-  .final-cta{position:relative;color:var(--white);text-align:center;overflow:hidden;min-height:70vh;display:flex;align-items:center;}
+  .final-cta{position:relative;color:var(--white);text-align:center;overflow:hidden;min-height:70vh;display:flex;align-items:center;background:var(--navy);}
   .final-bg{position:absolute;inset:0;z-index:0;}
   .final-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
   .final-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 20%, rgba(8,22,39,0.55) 0%, rgba(8,22,39,0.88) 75%);}
@@ -276,7 +274,7 @@
   <!-- HERO -->
   <section class="hero" id="home" style="padding:0;">
     <div class="hero-bg">
-      <img class="kenburns" src="https://images.unsplash.com/photo-1723221907187-3e88c1d74b99?auto=format&fit=crop&w=1600&q=75" alt="A business owner standing confidently in front of her storefront" loading="eager">
+      <img class="kenburns" src="https://images.unsplash.com/photo-1723221907187-3e88c1d74b99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600" alt="A business owner standing confidently in front of her storefront" loading="eager">
     </div>
     <div class="hero-content wrap">
       <div class="hero-head reveal in">
@@ -302,8 +300,8 @@
   <section>
     <div class="wrap">
       <div class="why-grid">
-        <div class="why-media img-frame clip-reveal reveal">
-          <img src="https://images.unsplash.com/photo-1761370571873-5d869310d731?auto=format&fit=crop&w=900&q=75" alt="A business owner among her shop's displays" loading="lazy">
+        <div class="why-media img-frame">
+          <img src="https://images.unsplash.com/photo-1761370571873-5d869310d731?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="A business owner among her shop's displays" loading="lazy">
         </div>
         <div class="why-text">
           <div class="eyebrow reveal">Why This Matters</div>
@@ -340,8 +338,8 @@
         <h2 class="section-title" style="color:var(--white);">Seven Simple<br><span class="g">Steps.</span></h2>
       </div>
 
-      <div class="how-banner img-frame clip-reveal reveal" style="position:relative;">
-        <img src="https://images.unsplash.com/photo-1753164597612-5e71b83fda91?auto=format&fit=crop&w=1400&q=75" alt="A business owner reviewing her new site from her workspace" loading="lazy">
+      <div class="how-banner img-frame" style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1753164597612-5e71b83fda91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400" alt="A business owner reviewing her new site from her workspace" loading="lazy">
         <span class="how-banner-cap">Built around your business</span>
       </div>
 
@@ -406,8 +404,8 @@
   <section id="who">
     <div class="wrap">
       <div class="who-grid">
-        <div class="who-media img-frame clip-reveal reveal">
-          <img src="https://images.unsplash.com/photo-1773858437808-509ceef36d67?auto=format&fit=crop&w=800&q=75" alt="A business owner in her market stall" loading="lazy">
+        <div class="who-media img-frame">
+          <img src="https://images.unsplash.com/photo-1773858437808-509ceef36d67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="A business owner in her market stall" loading="lazy">
         </div>
         <div class="who-list">
           <div class="eyebrow reveal">Who This Is For</div>
@@ -486,7 +484,7 @@
   <!-- FINAL CTA -->
   <section class="final-cta" id="contact">
     <div class="final-bg">
-      <img class="kenburns" src="https://images.unsplash.com/photo-1595349785606-5982d59ef635?auto=format&fit=crop&w=1600&q=75" alt="" loading="lazy">
+      <img class="kenburns" src="https://images.unsplash.com/photo-1595349785606-5982d59ef635?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600" alt="" loading="lazy">
     </div>
     <div class="final-inner wrap">
       <div class="eyebrow on-navy center reveal">Get Started</div>
