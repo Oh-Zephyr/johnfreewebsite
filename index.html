@@ -248,13 +248,17 @@
   .spots-line .g{color:var(--gold);}
 
   /* FAQ */
-  .faq-list{margin-top:var(--s6);max-width:720px;border-top:1px solid var(--navy-12);}
+  .faq-grid{display:flex;gap:var(--s7);align-items:flex-start;}
+  .faq-media{flex:0 0 320px;position:sticky;top:100px;aspect-ratio:3/4;box-shadow:0 30px 60px -24px rgba(16,39,67,0.3);}
+  .faq-body{flex:1 1 auto;min-width:0;}
+  .faq-list{margin-top:var(--s6);max-width:none;border-top:1px solid var(--navy-12);}
   .faq-item{border-bottom:1px solid var(--navy-12);}
   .faq-q{width:100%;text-align:left;background:none;border:none;padding:18px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-size:15px;font-weight:700;color:var(--navy);}
   .faq-q .plus{width:22px;height:22px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--gold-deep);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;transition:transform .3s var(--ease);}
   .faq-item[data-open="true"] .plus{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
   .faq-a p{padding:0 4px 18px;font-size:14px;line-height:1.55;color:var(--navy-45);font-weight:500;max-width:600px;}
+  @media (max-width:900px){.faq-grid{flex-direction:column;}.faq-media{position:static;flex:0 0 auto;width:100%;max-width:340px;aspect-ratio:16/10;}}
 
   /* FINAL CTA */
   .final-cta{position:relative;color:var(--white);text-align:center;overflow:hidden;min-height:70vh;display:flex;align-items:center;background:var(--navy);}
@@ -533,19 +537,26 @@
   <!-- FAQ -->
   <section id="faq">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">FAQ</div>
-        <h2 class="section-title">Questions,<br>Answered <span class="g">Honestly.</span></h2>
-      </div>
-      <div class="faq-list reveal" id="faqList">
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Is it really ₦0/$0?<span class="plus">+</span></button><div class="faq-a"><p>Yes — no design or development fee. Paid features or a different hosting service are discussed first.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">What do I provide in exchange?<span class="plus">+</span></button><div class="faq-a"><p>A short, honest video once you're happy with the finished website — your before, your experience, your thoughts.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Does the video need to be professional?<span class="plus">+</span></button><div class="faq-a"><p>No — a simple 1–2 minute phone recording is enough.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">When do I send it?<span class="plus">+</span></button><div class="faq-a"><p>Within 7 days of approving your completed website.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">What if I miss the deadline?<span class="plus">+</span></button><div class="faq-a"><p>The website may be taken offline and the project closed.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Can I request changes?<span class="plus">+</span></button><div class="faq-a"><p>Yes — 1 round, after reviewing the first version.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">No polished content — is that okay?<span class="plus">+</span></button><div class="faq-a"><p>Send what you have — we'll use it wherever it reasonably fits.</p></div></div>
-        <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Are online stores included?<span class="plus">+</span></button><div class="faq-a"><p>No, but they — plus CRM, automations and integrations — can be discussed separately.</p></div></div>
+      <div class="faq-grid">
+        <div class="faq-media img-frame reveal">
+          <img src="https://images.unsplash.com/photo-1664487657863-052de08bd698?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="A business owner on a phone call, thinking through a question" loading="lazy">
+        </div>
+        <div class="faq-body">
+          <div class="section-head reveal">
+            <div class="eyebrow">FAQ</div>
+            <h2 class="section-title">Questions,<br>Answered <span class="g">Honestly.</span></h2>
+          </div>
+          <div class="faq-list reveal" id="faqList">
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Is it really ₦0/$0?<span class="plus">+</span></button><div class="faq-a"><p>Yes — no design or development fee. Paid features or a different hosting service are discussed first.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">What do I provide in exchange?<span class="plus">+</span></button><div class="faq-a"><p>A short, honest video once you're happy with the finished website — your before, your experience, your thoughts.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Does the video need to be professional?<span class="plus">+</span></button><div class="faq-a"><p>No — a simple 1–2 minute phone recording is enough.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">When do I send it?<span class="plus">+</span></button><div class="faq-a"><p>Within 7 days of approving your completed website.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">What if I miss the deadline?<span class="plus">+</span></button><div class="faq-a"><p>The website may be taken offline and the project closed.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Can I request changes?<span class="plus">+</span></button><div class="faq-a"><p>Yes — 1 round, after reviewing the first version.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">No polished content — is that okay?<span class="plus">+</span></button><div class="faq-a"><p>Send what you have — we'll use it wherever it reasonably fits.</p></div></div>
+            <div class="faq-item" data-open="false"><button class="faq-q" aria-expanded="false">Are online stores included?<span class="plus">+</span></button><div class="faq-a"><p>No, but they — plus CRM, automations and integrations — can be discussed separately.</p></div></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
